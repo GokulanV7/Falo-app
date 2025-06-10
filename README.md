@@ -1,161 +1,261 @@
-# Falo - AI-Powered Misinformation Detection
-
-Falo is an intelligent assistant that helps you verify information and detect potential misinformation in text and URLs. Built with Flutter and powered by advanced AI, Falo provides instant credibility assessments to help you navigate the digital information landscape with confidence.
-
-## 🌟 Key Features
-
-- **AI-Powered Analysis**: Instantly assess the credibility of any text or URL
-- **Comprehensive Reports**: Get detailed breakdowns of information reliability
-- **Voice Input**: Use voice commands for hands-free verification
-- **Dark Mode**: Comfortable viewing in any lighting condition
-- **Cross-Platform**: Available on iOS, Android, and web
-
-## 🏗 Project Structure
-
-```
-Falo/
-├── Frontend/           # Flutter mobile application
-│   └── Falo/          # Main Flutter project
-├── backend/            # Python backend service
-│   └── misinfo_detection_project/
-│       ├── api/       # FastAPI endpoints
-│       ├── config/     # Configuration files
-│       └── data/       # Data storage and processing
-└── Falotestphoto/      # Screenshots and demo assets
-```
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- **For Mobile Development**:
-  - Flutter SDK (latest stable version)
-  - Android Studio / Xcode
-  - VS Code or Android Studio (recommended)
-
-- **For Backend Development**:
-  - Python 3.8+
-  - pip (Python package manager)
-  - Virtual environment (recommended)
-
-### Quick Start
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/GokulanV7/Falo-app.git
-   cd Falo
-   ```
-
-2. **Set up the backend**
-   ```bash
-   cd backend/misinfo_detection_project
-   python -m venv .venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-   pip install -r requirements.txt
-   ```
-
-3. **Set up the mobile app**
-   ```bash
-   cd ../../Frontend/Falo
-   flutter pub get
-   ```
-
-4. **Run the applications**
-   - Backend: `uvicorn api.main:app --reload`
-   - Mobile: `flutter run`
-
-## 📱 Screenshots
+# 🛡️ Falo - AI-Powered Misinformation Detection
 
 <div align="center">
-  <h3>App Walkthrough</h3>
-  
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 30px;">
-    <div style="flex: 1; min-width: 280px; max-width: 320px;">
-      <img src="Falotestphoto/IMG_5909.PNG" alt="Welcome Screen" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
-      <h4>1. Welcome to Falo</h4>
-      <p>Your intelligent shield against misinformation. Get started with a clean, friendly interface.</p>
-    </div>
-    
-    <div style="flex: 1; min-width: 280px; max-width: 320px;">
-      <img src="Falotestphoto/IMG_5910.PNG" alt="Analysis Features" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
-      <h4>2. Analyze Anything</h4>
-      <p>Paste text or a URL. Falo assesses credibility, checks safety, and detects potential bias in seconds.</p>
-    </div>
-    
-    <div style="flex: 1; min-width: 280px; max-width: 320px;">
-      <img src="Falotestphoto/IMG_5911.PNG" alt="Get Started" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
-      <h4>3. Stay Informed</h4>
-      <p>Your reliable guide to verified knowledge. Get started with confidence.</p>
-    </div>
-  </div>
 
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px;">
-    <div style="flex: 1; min-width: 280px; max-width: 320px;">
-      <img src="Falotestphoto/IMG_5912.PNG" alt="Chat Interface" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
-      <h4>4. Interactive Chat</h4>
-      <p>Natural language interface for analyzing content and getting instant feedback.</p>
-    </div>
-    
-    <div style="flex: 1; min-width: 280px; max-width: 320px;">
-      <img src="Falotestphoto/IMG_5913.PNG" alt="Voice Input" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
-      <h4>5. Voice Commands</h4>
-      <p>Use voice input for hands-free verification of information.</p>
-    </div>
-    
-    <div style="flex: 1; min-width: 280px; max-width: 320px;">
-      <img src="Falotestphoto/IMG_5914.PNG" alt="Analysis Results" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
-      <h4>6. Detailed Analysis</h4>
-      <p>Get comprehensive reports with confidence scores and evidence-based assessments.</p>
-    </div>
-  </div>
+![Falo Logo](https://img.shields.io/badge/Falo-AI%20Shield-4a6cf7?style=for-the-badge&logo=shield&logoColor=white)
 
-  <div style="margin: 40px 0; padding: 20px; background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%); border-radius: 12px; max-width: 800px; margin: 40px auto;">
-    <h3>📹 See Falo in Action</h3>
-    <p>Interested in a live demo? Contact us to see how Falo can help combat misinformation in your workflow.</p>
-    <p style="margin-top: 15px;">
-      <a href="mailto:contact@falo.app" style="background-color: #4a6cf7; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 500;">Request Demo</a>
-    </p>
-  </div>
+**Your intelligent shield against misinformation in the digital age**
+
+[![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
+[🚀 Quick Start](#-quick-start) • [📱 Demo](#-demo) • [🔧 Features](#-features) • [📖 Docs](#-documentation) • [🤝 Contribute](#-contributing)
+
 </div>
-
-## 📚 Documentation
-
-For detailed technical documentation, please refer to:
-
-- [Frontend Documentation](./Frontend/Falo/README.md) - Setup and development guide for the Flutter mobile app
-- [Backend Documentation](./backend/misinfo_detection_project/README.md) - API documentation and setup instructions
-- [API Reference](https://api.falo.app/docs) - Interactive API documentation (when deployed)
-
-## 🤝 Contributing
-
-We welcome contributions from the community! Here's how you can help:
-
-1. **Report Bugs**: Open an issue with detailed reproduction steps
-2. **Suggest Features**: Share your ideas for new features
-3. **Submit Pull Requests**: Follow these steps:
-   - Fork the repository
-   - Create a feature branch (`git checkout -b feature/amazing-feature`)
-   - Commit your changes (`git commit -m 'Add amazing feature'`)
-   - Push to the branch (`git push origin feature/amazing-feature`)
-   - Open a Pull Request
-
-Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-Special thanks to:
-- The Flutter team for the amazing cross-platform framework
-- The FastAPI team for the high-performance backend framework
-- The open-source community for invaluable tools and libraries
-- All our contributors and beta testers for their feedback
 
 ---
 
-<div align="center" style="margin-top: 40px;">
-  <p>Made with ❤️ by the Falo Team</p>
-  <p>© 2025 Falo. All rights reserved.</p>
+## 🔧 Features
+
+<table>
+<tr>
+<td width="50%">
+
+### 🤖 **AI-Powered Analysis**
+Instantly assess text and URL credibility with advanced machine learning algorithms
+
+### 🗣️ **Voice Commands**
+Hands-free verification using voice input technology
+
+### 🌙 **Dark Mode**
+Comfortable viewing experience in any lighting condition
+
+</td>
+<td width="50%">
+
+### 📊 **Detailed Reports**
+Comprehensive breakdowns with confidence scores and evidence
+
+### 🌐 **Cross-Platform**
+Available on iOS, Android, and web platforms
+
+### ⚡ **Real-time Analysis**
+Get instant results with lightning-fast processing
+
+</td>
+</tr>
+</table>
+
+---
+
+## 📱 Demo
+
+<div align="center">
+
+### 🎬 **See Falo in Action**
+
+https://github.com/user-attachments/assets/demo-video-placeholder
+
+*Demo Video: Experience Falo's misinformation detection capabilities*
+
+</div>
+
+<details>
+<summary>📸 <strong>Click to view App Screenshots</strong></summary>
+
+<div align="center">
+<table>
+<tr>
+<td align="center" width="33%">
+<img src="Falotestphoto/IMG_5909.PNG" width="200" alt="Welcome Screen"/>
+<br><strong>Welcome Screen</strong>
+<br><em>Clean, friendly interface</em>
+</td>
+<td align="center" width="33%">
+<img src="Falotestphoto/IMG_5910.PNG" width="200" alt="Analysis Features"/>
+<br><strong>Analysis Hub</strong>
+<br><em>Text & URL verification</em>
+</td>
+<td align="center" width="33%">
+<img src="Falotestphoto/IMG_5911.PNG" width="200" alt="Get Started"/>
+<br><strong>Getting Started</strong>
+<br><em>User-friendly onboarding</em>
+</td>
+</tr>
+<tr>
+<td align="center" width="33%">
+<img src="Falotestphoto/IMG_5912.PNG" width="200" alt="Chat Interface"/>
+<br><strong>Interactive Chat</strong>
+<br><em>Natural language queries</em>
+</td>
+<td align="center" width="33%">
+<img src="Falotestphoto/IMG_5913.PNG" width="200" alt="Voice Input"/>
+<br><strong>Voice Commands</strong>
+<br><em>Hands-free operation</em>
+</td>
+<td align="center" width="33%">
+<img src="Falotestphoto/IMG_5914.PNG" width="200" alt="Analysis Results"/>
+<br><strong>Detailed Results</strong>
+<br><em>Comprehensive analysis</em>
+</td>
+</tr>
+</table>
+</div>
+
+</details>
+
+---
+
+## 🏗️ Architecture
+
+<div align="center">
+
+```mermaid
+graph TB
+    A[📱 Flutter Frontend] --> B[🔗 API Gateway]
+    B --> C[🧠 AI Analysis Engine]
+    B --> D[🗄️ Data Processing]
+    C --> E[📊 Credibility Scoring]
+    D --> F[🔍 Content Verification]
+    E --> G[📋 Report Generation]
+    F --> G
+```
+
+</div>
+
+<details>
+<summary>📁 <strong>Project Structure</strong></summary>
+
+```bash
+Falo/
+├── 📱 Frontend/              # Flutter mobile application
+│   └── Falo/                # Main Flutter project
+│       ├── lib/             # Dart source code
+│       ├── assets/          # Images, fonts, etc.
+│       └── pubspec.yaml     # Dependencies
+├── 🔧 backend/              # Python backend service
+│   └── misinfo_detection_project/
+│       ├── api/             # FastAPI endpoints
+│       ├── config/          # Configuration files
+│       ├── data/            # Data storage
+│       └── requirements.txt # Python dependencies
+└── 📸 Falotestphoto/        # Screenshots & demo assets
+    └── DemoVideo.mp4        # Application demo video
+```
+
+</details>
+
+---
+
+## 🚀 Quick Start
+
+<details>
+<summary><strong>📋 Prerequisites</strong></summary>
+
+### Mobile Development
+- Flutter SDK (latest stable)
+- Android Studio / Xcode
+- VS Code or Android Studio
+
+### Backend Development
+- Python 3.8+
+- pip package manager
+- Virtual environment (recommended)
+
+</details>
+
+### ⚡ One-Click Setup
+
+```bash
+# 1️⃣ Clone the repository
+git clone https://github.com/GokulanV7/Falo-app.git && cd Falo
+
+# 2️⃣ Backend setup
+cd backend/misinfo_detection_project
+python -m venv .venv && source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+
+# 3️⃣ Frontend setup
+cd ../../Frontend/Falo && flutter pub get
+
+# 4️⃣ Launch applications
+# Terminal 1: Backend
+uvicorn api.main:app --reload
+
+# Terminal 2: Mobile app
+flutter run
+```
+
+<div align="center">
+
+🎉 **That's it! Falo is now running locally.**
+
+</div>
+
+---
+
+## 📖 Documentation
+
+| 📚 Resource | 🔗 Link | 📝 Description |
+|-------------|---------|----------------|
+| **Frontend Guide** | [Flutter Docs](./Frontend/Falo/README.md) | Mobile app setup & development |
+| **Backend API** | [Python Docs](./backend/misinfo_detection_project/README.md) | API documentation & setup |
+| **Live API Docs** | [Interactive API](https://api.falo.app/docs) | Real-time API exploration |
+
+---
+
+## 🤝 Contributing
+
+<div align="center">
+
+We ❤️ contributions from the community!
+
+[![Contributors](https://img.shields.io/github/contributors/GokulanV7/Falo-app?style=for-the-badge)](https://github.com/GokulanV7/Falo-app/graphs/contributors)
+[![Issues](https://img.shields.io/github/issues/GokulanV7/Falo-app?style=for-the-badge)](https://github.com/GokulanV7/Falo-app/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/GokulanV7/Falo-app?style=for-the-badge)](https://github.com/GokulanV7/Falo-app/pulls)
+
+</div>
+
+### 🎯 How to Contribute
+
+1. **🐛 Report Bugs** → [Open an Issue](https://github.com/GokulanV7/Falo-app/issues/new)
+2. **💡 Suggest Features** → [Feature Request](https://github.com/GokulanV7/Falo-app/issues/new)
+3. **🔧 Submit Code**:
+   ```bash
+   git checkout -b feature/amazing-feature
+   git commit -m 'Add amazing feature'
+   git push origin feature/amazing-feature
+   # Open a Pull Request! 🎉
+   ```
+
+---
+
+## 📞 Support & Contact
+
+<div align="center">
+
+| 💬 **Need Help?** | 📧 **Business Inquiries** | 📱 **Follow Us** |
+|-------------------|-------------------------|------------------|
+| [GitHub Issues](https://github.com/GokulanV7/Falo-app/issues) | [contact@falo.app](mailto:contact@falo.app) | [Twitter](https://twitter.com/falo_app) |
+
+</div>
+
+---
+
+## 📜 License
+
+<div align="center">
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+**Made with ❤️ by the Falo Team**
+
+⭐ **Star us on GitHub if you find Falo helpful!**
+
+---
+
+*© 2025 Falo. Fighting misinformation, one verification at a time.*
+
 </div>
