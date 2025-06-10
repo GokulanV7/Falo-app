@@ -65,6 +65,34 @@ Falo/
    - Backend: `uvicorn api.main:app --reload`
    - Mobile: `flutter run`
 
+## 📱 Screenshots & Demo
+
+### App Demo Video
+[![Falo App Demo Video](Falotestphoto/IMG_5908.PNG)](Falotestphoto/DemoVideo.mp4)
+*Click the image above to watch the demo video*
+
+### App Screenshots
+
+<div align="center">
+  <img src="Falotestphoto/IMG_5909.PNG" alt="Home Screen" width="200"/>
+  <p>Home Screen - Browse and search for news</p>
+  
+  <img src="Falotestphoto/IMG_5910.PNG" alt="Article Analysis" width="200"/>
+  <p>Article Analysis - Detailed credibility assessment</p>
+  
+  <img src="Falotestphoto/IMG_5911.PNG" alt="Fact-Checking" width="200"/>
+  <p>Fact-Checking - Real-time verification of claims</p>
+  
+  <img src="Falotestphoto/IMG_5912.PNG" alt="Source Reliability" width="200"/>
+  <p>Source Reliability - Evaluate content sources</p>
+  
+  <img src="Falotestphoto/IMG_5913.PNG" alt="Search Functionality" width="200"/>
+  <p>Search - Find and verify information</p>
+  
+  <img src="Falotestphoto/IMG_5914.PNG" alt="Profile & History" width="200"/>
+  <p>Profile - View your verification history</p>
+</div>
+
 ## 📚 Documentation
 
 - [Frontend Documentation](./Frontend/Falo/README.md)
