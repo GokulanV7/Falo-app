@@ -1,0 +1,86 @@
+[versions]
+
+# https://developer.android.com/studio/releases/gradle-plugin
+android-gradle = "unspecified"
+
+# https://r8.googlesource.com/r8/+refs
+r8 = "unspecified"
+
+# https://kotlinlang.org/docs/releases.html#release-details
+kotlin = "unspecified"
+
+gradle-test-retry = "unspecified"
+
+android-cache-fix = "unspecified"
+
+# https://github.com/google/bundletool/releases
+bundletool = "1.10.0"
+
+# https://github.com/google/desugar_jdk_libs
+desugar = "1.2.0"
+
+# https://github.com/Kotlin/kotlinx.coroutines/releases
+kotlinx-coroutines = "1.7.3"
+
+# https://github.com/google/ksp/releases
+ksp = "1.9.0-1.0.12"
+
+# https://github.com/pinterest/ktlint/releases
+ktlint = "0.43.2"
+
+# https://junit.org/junit4/
+junit4 = "4.13.2"
+
+# https://github.com/mockito/mockito/releases
+mockito-Core = '4.2.0'
+
+# https://github.com/mockito/mockito-kotlin/releases
+mockito-kotlin = '4.0.0'
+
+# https://github.com/robolectric/robolectric/releases/
+robolectric = "4.10.2"
+
+
+[libraries]
+r8 = { module = "com.android.tools:r8", version.ref = "r8" }
+android-gradle = { module = "com.android.tools.build:gradle", version.ref = "android-gradle" }
+kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" } 
+ksp-gradle = { module = "com.google.devtools.ksp:symbol-processing-gradle-plugin", version.ref = "ksp"}
+gradle-test-retry = { module = "org.gradle:test-retry-gradle-plugin", version.ref = "gradle-test-retry"}
+
+bundletool = { module = "com.android.toos.build:bundletool", version.ref = "bundletool" }
+desugar_jdk_libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar" }
+
+junit4 = { module = "junit:junit", version.ref = "junit4" }
+
+ktlint = { module = "com.pinterest:ktlint", version.ref = "ktlint" }
+
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+kotlin-stdlib-jdk7 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk7", version.ref = "kotlin" }
+kotlin-stdlib-jdk8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlin" }
+kotlin-test-junit =  { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin"}
+
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-rx2 = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-rx2", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-rx3 = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-rx3", version.ref = "kotlinx-coroutines" }
+
+android-cache-fix = { module = "gradle.plugin.org.gradle.android:android-cache-fix-gradle-plugin", version.ref = "android-cache-fix"}
+
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito-Core" }
+mockito-inline = { module = "org.mockito:mockito-inline", version.ref = "mockito-Core" }
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockito-kotlin" }
+
+robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
+robolectric-shadows-httpclient = { module = "org.robolectric:shadows-httpclient", version.ref = "robolectric" }
+robolectric-shadows-playservices = { module = "org.robolectric:shadows-playservices", version.ref = "robolectric" }
+
+[plugins]
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
+android-cache-fix = { id = "org.gradle.android.cache-fix", version.ref = "android-cache-fix" }
+gradle-test-retry = { id = "org.gradle.test-retry", version.ref = "gradle-test-retry" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

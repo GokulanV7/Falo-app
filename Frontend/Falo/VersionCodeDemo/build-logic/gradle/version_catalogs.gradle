@@ -1,0 +1,20 @@
+dependencyResolutionManagement {
+    versionCatalogs {
+        libs {
+	    // load versions from gradle.properties
+            version("r8", r8Version)
+            version("android-gradle", androidGradlePluginVersion)
+            version("kotlin", kotlinVersion)
+            version("gradle-test-retry", gradleTestRetryVersion)
+            version("android-cache-fix", androidCacheFixVersion)
+        }
+        androidxLibs {
+            from(files("androidx.versions.toml"))
+            version("android-gradle", androidGradlePluginVersion)
+        }
+        googleLibs {
+            from(files("google.versions.toml"))
+        }
+    }
+}
+

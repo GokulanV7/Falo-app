@@ -1,0 +1,50 @@
+plugins {
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+}
+
+android {
+    namespace "com.example.myapplication"
+    defaultConfig {
+        applicationId "com.example.myapplication"
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        compileOptions {
+            coreLibraryDesugaringEnabled true
+        }
+    }
+    buildTypes {
+        release {
+            postprocessing {
+                removeUnusedCode true
+                optimizeCode true
+                obfuscate true
+                removeUnusedResources true
+                proguardFiles file('proguards-rules.pro')
+            }
+        }
+    }
+    dynamicFeatures = [":dynamicfeature1"]
+
+    testFixtures {
+        enable = true
+    }
+
+    flavorDimensions 'default'
+    productFlavors {
+        develop { }
+        beta { }
+        staging { }
+        production { }
+    }
+}
+
+dependencies {
+    coreLibraryDesugaring libs.desugar.jdk.libs
+    implementation libs.kotlin.stdlib.jdk7
+    implementation androidxLibs.appcompat
+    implementation androidxLibs.core.ktx
+    implementation androidxLibs.constraintlayout
+    implementation androidxLibs.room.ktx
+    implementation androidxLibs.room.runtime
+}

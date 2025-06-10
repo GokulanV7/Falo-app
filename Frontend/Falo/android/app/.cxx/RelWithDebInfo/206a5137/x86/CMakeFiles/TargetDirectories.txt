@@ -1,0 +1,2 @@
+/Volumes/simbo_x/Falo/android/app/.cxx/RelWithDebInfo/206a5137/x86/CMakeFiles/edit_cache.dir
+/Volumes/simbo_x/Falo/android/app/.cxx/RelWithDebInfo/206a5137/x86/CMakeFiles/rebuild_cache.dir

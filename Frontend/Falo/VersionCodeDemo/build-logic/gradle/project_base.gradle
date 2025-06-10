@@ -1,0 +1,93 @@
+
+plugins.withType(com.android.build.gradle.api.AndroidBasePlugin) {
+    def hasDynamicFeatureModulePlugin = pluginManager.hasPlugin("com.android.dynamic-feature")
+
+    androidComponents {
+        beforeVariants(selector().all()) {
+            switch(flavorName) {
+                case "develop":
+                    enabled = buildType == "debug"
+                    break
+                default:
+                    enabled = buildType == "release"
+                    break
+            }
+        }
+    }
+
+    android {
+        defaultConfig {
+            targetSdk 33
+            compileOptions {
+                sourceCompatibility JavaVersion.VERSION_11
+                targetCompatibility JavaVersion.VERSION_11
+            }
+
+            vectorDrawables.useSupportLibrary = true
+
+            testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+            testInstrumentationRunnerArguments.putIfAbsent("clearPackageData", "true")
+        }
+
+        productFlavors.all {
+            if (name == "develop") {
+                isDefault = true
+            }
+        }
+
+        testOptions {
+            execution = "ANDROIDX_TEST_ORCHESTRATOR"
+
+            unitTests {
+                // https://github.com/robolectric/robolectric/issues/5597#issuecomment-876564570
+                includeAndroidResources = !hasDynamicFeatureModulePlugin
+
+                all {
+                    testLogging {
+                        events "standardOut", "started", "passed", "failed", "skipped"
+                        showCauses = true
+                        showExceptions = true
+                        showStackTraces = true
+                        showStandardStreams = true
+
+                    }
+                    systemProperty "robolectric.logging", "stdout"
+                }
+            }
+        }
+    }
+
+    configurations.all {
+        // Conflicted with Android platform API such as org.apache.http
+        exclude group: "org.apache.httpcomponents"
+        // Conflicted with Android platform API such as org.json
+        exclude group: "org.json", module: "json"
+        // Conflicted with Android platform API such as javax.xml, org.xml, and org.w3c.dom
+        exclude group: "xalan", module: "xalan"
+        // Conflicted with Android platform API such as org.xmlpull
+        exclude group: "org.ogce", module: "xpp3"
+        exclude group: "xpp3", module: "xpp3"
+    }
+
+    dependencies {
+        testImplementation libs.junit4
+        testImplementation libs.robolectric
+        testImplementation libs.mockito.core
+        testImplementation libs.mockito.kotlin
+        testImplementation androidxLibs.test.ktx
+
+        androidTestImplementation androidxLibs.test.ext.junit.ktx
+        androidTestImplementation androidxLibs.test.espresso.core
+    }
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11.toString()
+        allWarningsAsErrors = true
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs << "-Xlint:all" << "-Werror"
+}

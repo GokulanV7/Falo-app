@@ -1,0 +1,107 @@
+# --- Groq LLM Configuration ---
+groq:
+  model: "llama3-70b-8192"
+  temperature: 0.1
+  request_timeout: 45 # Increased slightly for complex tasks
+  check_rag_sufficiency_prompt: >
+    You are an evaluator assessing context relevance. Based *only* on the provided text snippets labeled 'CONTEXT', can you definitively and completely answer the 'USER QUERY'?
+    Answer only with "YES", "NO", or "PARTIALLY" followed by a very brief (1 sentence) justification. Do not attempt to answer the user query itself.
+    USER QUERY: "{query}"
+    CONTEXT:
+    {context}
+    Your Evaluation:
+
+# --- VirusTotal Configuration ---
+virustotal:
+  api_url: "https://www.virustotal.com/api/v3/urls"
+  request_timeout: 20
+  malicious_threshold: 3 # Number of engines flagging as malicious to trigger higher suspicion
+
+# --- IPQualityScore Configuration ---
+ipqualityscore:
+  url_check_api_url: "https://ipqualityscore.com/api/json/url/" # Verify exact endpoint
+  request_timeout: 20
+  high_risk_threshold: 85   # Score >= this is high risk
+  medium_risk_threshold: 60 # Score >= this is medium risk
+
+# --- URLScan.io Configuration ---
+urlscan:
+  search_api_url: "https://urlscan.io/api/v1/search/"
+  # submit_api_url: "https://urlscan.io/api/v1/scan/" # Optional: Submission is slow
+  request_timeout: 25
+  poll_timeout: 60 # If polling after submission (less likely used now)
+  poll_interval: 10
+
+# --- Search API (Example: SearchApi.io) Configuration ---
+search_api:
+  # Use 'google' or other engine supported by your provider
+  engine: "google"
+  # Ensure the SDK or your manual implementation uses the correct URL
+  request_timeout: 20
+  results_count: 5 # Number of search snippets to retrieve
+  web_synthesis_prompt: >
+    Based *only* on the following web search result snippets, provide a concise answer to the original user query.
+    Clearly state if the information is contradictory or unavailable in the snippets. Cite the source URLs briefly where possible.
+    USER QUERY: "{query}"
+    SEARCH SNIPPETS:
+    {snippets}
+    Answer:
+
+# --- Cohere Configuration ---
+cohere:
+  rerank_model: "rerank-english-v3.0" # Check latest available models
+  rerank_top_n: 3 # Return top N documents after re-ranking
+
+# --- RAG Configuration ---
+rag:
+  chunk_size: 1000
+  chunk_overlap: 200
+  embedding_model: "sentence-transformers/all-mpnet-base-v2"
+  # Retrieve more initially for the re-ranker to work on
+  retrieval_multiplier: 3 # retrieve top_k * multiplier initially
+  # The final number of docs to use after re-ranking (see cohere.rerank_top_n)
+  # This config is less critical now if relying on Cohere top_n
+  # top_k: 5 # Keep for fallback if re-ranking fails? Maybe redundant.
+  index_path: "data/rag_data/specialized_topic_index" # IMPORTANT: Use new path
+  hybrid_search_weight: 0.5 # Example if implementing manual hybrid alpha
+
+# --- Local Intent Classifier ---
+classifier:
+  model_name: "facebook/bart-large-mnli"
+  cache_dir: "./model_cache"
+  labels:
+    - "url"
+    - "misinfo"
+    - "factual"
+
+# --- Knowledge Graph Configuration ---
+knowledge_graph:
+  storage_path: "data/kg_store/knowledge_graph.gpickle"
+  # Define relevant entity types for your topic
+  entity_types: ["PERSON", "ORG", "GPE", "EVENT", "WORK_OF_ART", "LAW", "PRODUCT"] # Adjust as needed
+  query_depth: 1 # How many hops to explore when querying
+
+# --- Web Scraper (org12.py related, if using its output) ---
+# data_sources: ... (Your chosen sources)
+# ingestion: ... (Settings for org12.py)
+# mongo: # If org12.py saves to MongoDB
+#   db_name: "your_topic_db"
+#   collection_name: "articles"
+
+# --- Application Settings ---
+logging:
+  level: "DEBUG"
+
+cache:
+  default_ttl_seconds: 600 # 10 minutes TTL for API responses
+  # Optionally add TTLs for specific API utils if desired
+  # vt_ttl_seconds: 3600 # Cache VT results for 1 hour
+
+security:
+  enable_api_key_auth: false # Keep True for deployment
+
+# --- Optional Server Config (usually via uvicorn command) ---
+# api:
+#   host: "0.0.0.0"
+#   port: 8000
+#   cors_allowed_origins: ["http://localhost:XXXX", "http://127.0.0.1:XXXX"] # Flutter dev port
