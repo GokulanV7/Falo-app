@@ -65,32 +65,33 @@ Falo/
    - Backend: `uvicorn api.main:app --reload`
    - Mobile: `flutter run`
 
-## 📱 Screenshots & Demo
-
-### App Demo Video
-[![Falo App Demo Video](Falotestphoto/IMG_5908.PNG)](Falotestphoto/DemoVideo.mp4)
-*Click the image above to watch the demo video*
-
-### App Screenshots
+## 📱 Screenshots
 
 <div align="center">
-  <img src="Falotestphoto/IMG_5909.PNG" alt="Home Screen" width="200"/>
-  <p>Home Screen - Browse and search for news</p>
+  <h3>App Interface</h3>
   
-  <img src="Falotestphoto/IMG_5910.PNG" alt="Article Analysis" width="200"/>
-  <p>Article Analysis - Detailed credibility assessment</p>
+  <img src="Falotestphoto/IMG_5909.PNG" alt="App Home Screen" width="200"/>
+  <p>App Home Screen - Main dashboard with navigation options</p>
   
-  <img src="Falotestphoto/IMG_5911.PNG" alt="Fact-Checking" width="200"/>
-  <p>Fact-Checking - Real-time verification of claims</p>
+  <img src="Falotestphoto/IMG_5910.PNG" alt="Content Analysis" width="200"/>
+  <p>Content Analysis - Detailed breakdown of information credibility</p>
   
-  <img src="Falotestphoto/IMG_5912.PNG" alt="Source Reliability" width="200"/>
-  <p>Source Reliability - Evaluate content sources</p>
+  <img src="Falotestphoto/IMG_5911.PNG" alt="Verification Process" width="200"/>
+  <p>Verification - Step-by-step fact-checking interface</p>
   
-  <img src="Falotestphoto/IMG_5913.PNG" alt="Search Functionality" width="200"/>
-  <p>Search - Find and verify information</p>
+  <img src="Falotestphoto/IMG_5912.PNG" alt="Source Evaluation" width="200"/>
+  <p>Source Evaluation - Detailed source credibility assessment</p>
   
-  <img src="Falotestphoto/IMG_5914.PNG" alt="Profile & History" width="200"/>
-  <p>Profile - View your verification history</p>
+  <img src="Falotestphoto/IMG_5913.PNG" alt="Search Results" width="200"/>
+  <p>Search - Find and analyze specific information</p>
+  
+  <img src="Falotestphoto/IMG_5914.PNG" alt="User Profile" width="200"/>
+  <p>User Profile - Track your verification history and preferences</p>
+  
+  <div style="margin-top: 20px; padding: 15px; background-color: #f8f9fa; border-radius: 5px;">
+    <h4>📹 Demo Video Available</h4>
+    <p>Would you like to see Falo in action? Contact us for a live demo or to request access to the demonstration video.</p>
+  </div>
 </div>
 
 ## 📚 Documentation
